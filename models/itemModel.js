@@ -20,8 +20,10 @@ const itemSchema = new mongoose.Schema({
     },
  
   }, { timestamps: true })
-  const Item = mongoose.model('Item', itemSchema)
-  module.exports = Item
+
+  module.exports = mongoose.model('Item', itemSchema)
+  // const Item = mongoose.model('Item', itemSchema)
+  // module.exports = Item
 
 // const itemSchema = new mongoose.Schema({
 //   name: String,

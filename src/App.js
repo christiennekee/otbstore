@@ -4,7 +4,9 @@ import { Navbar } from "./components/navbar";
 import { Shop } from "./pages/shop/shop";
 import { Cart } from "./pages/cart/cart";
 import { ShopContextProvider } from "./context/shop-context";
+//import { LoadForm } from "./components/loadForm"
 import { AddItemForm } from "./pages/shop/addItemForm"
+
 
 function App() {
   return (

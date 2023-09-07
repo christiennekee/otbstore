@@ -22,7 +22,7 @@ export const PRODUCTS = [
   },
   {
     id: 3,
-    productName: "salvation beenie",
+    productName: "beenie",
     price: 15.0,
     productImage: product3,
   },
