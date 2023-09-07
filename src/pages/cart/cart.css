@@ -1,4 +1,6 @@
 .cart {
+  font-family: 'cherry bomb one';
+  font-family: 'cinzel';
     display: flex;
     flex-direction: column;
     justify-content: center;

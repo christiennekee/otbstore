@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { useItemsContext } from "../hooks/useItemsContext";
-import { useAuthContext } from "../hooks/useAuthContext";
+//import { useAuthContext } from "../hooks/useAuthContext";
 
 
 const LoadForm = () => {
   const { dispatch } = useItemsContext()
-  const { user } = useAuthContext()
+  //const { user } = useAuthContext()
 
   const [title, setTitle] = useState('')
   const [type, setType] = useState('')
@@ -23,7 +23,7 @@ const LoadForm = () => {
       body: JSON.stringify(item),
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${user.token}`
+        //'Authorization': `Bearer ${user.token}`
       }
     })
     const json = await response.json()

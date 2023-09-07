@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const itemRoutes = require('./routes/items')
 
 // express app
@@ -18,6 +19,23 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/items', itemRoutes)
 
+app.get('/addItemForm', (req, res) => {
+  res.render('addItemForm');
+});
+
+app.use(bodyParser.json());
+
+// Route for adding items
+app.post('/api/addItemForm', async (req,res) => {
+  try{
+    const newItem = new Item(req.body);
+    await newItem.save();
+    res.status(201).json(newItem);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({error: 'Error adding item'});
+  }
+});
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
@@ -29,3 +47,4 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((error) => {
     console.log(error)
   })
+  

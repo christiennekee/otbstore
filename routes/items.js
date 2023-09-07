@@ -2,7 +2,7 @@ const express = require('express');
 
 const {
     createItem,
-    getItems,
+    //getItems,
     getItem,
     deleteItem,
     updateItem
@@ -13,10 +13,10 @@ const {
   const router = express.Router()
   
   // require auth for all Item routes
-  router.use(requireAuth)
+  //router.use(requireAuth)
   
   // GET all Items
-  router.get('/', getItems)
+ // router.get('/', getItems)
   
   //GET a single Item
   router.get('/:id', getItem)

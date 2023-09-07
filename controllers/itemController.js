@@ -1,14 +1,14 @@
-const Item = require('../models/itemModel')
-const mongoose = require('mongoose')
+// const Item = require('../models/itemModel')
+// const mongoose = require('mongoose')
 
 // get all items
-const getItems = async (req, res) => {
-  const user_id = req.user._id
+// const getItems = async (req, res) => {
+//   const user_id = req.user._id
 
-  const items = await Item.find({user_id}).sort({createdAt: -1})
+//   const items = await Item.find({user_id}).sort({createdAt: -1})
 
-  res.status(200).json(items)
-}
+//   res.status(200).json(items)
+// }
 
 // get a single item
 const getItem = async (req, res) => {
@@ -94,7 +94,7 @@ const updateItem = async (req, res) => {
 
 
 module.exports = {
-  getItems,
+  //getItems,
   getItem,
   createItem,
   deleteItem,
